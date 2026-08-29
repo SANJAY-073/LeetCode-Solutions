@@ -21,9 +21,6 @@ class Solution {
             group.computeIfAbsent(id, k -> new ArrayList<>()).add(sorted[i]);
             groupId.put(sorted[i], id);
         }
-
-        // Rebuild nums using the smallest
-        // available value from its group
         for(int i = 0; i < n; i++){
             int grp = groupId.get(nums[i]);
             int p = pos.getOrDefault(grp, 0);
